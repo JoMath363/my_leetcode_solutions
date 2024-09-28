@@ -4,21 +4,17 @@ class Solution(object):
         :type s: str
         :rtype: int
         """
+        charSet = set()
+        l = 0
+        maxLength = 0
 
-        maxLen = 0
+        for r in range(len(s)):
+            while s[r] in charSet:
+                charSet.remove(s[l])
+                l += 1
+            charSet.add(s[r])
+            maxLength = max(maxLength, r - l + 1)
 
-        for i in range(len(s)):
-            subStr = ''
-
-            for j in range(i, len(s)):
-                if s[j] in subStr:
-                    break
-                else:
-                    subStr += s[j]    
-
-            if len(subStr) > maxLen:
-                maxLen = len(subStr)
-
-        return maxLen
+        return maxLength
 
         
