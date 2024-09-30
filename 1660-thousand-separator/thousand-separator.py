@@ -10,8 +10,6 @@ class Solution(object):
 
         for i in range(len(n), 0, -3):
             limit = max(0, i-3)
-            print(i)
-            print(limit)
             triplets.append(n[limit:i])
             
 
