@@ -4,7 +4,6 @@ class Solution:
         nums = sorted({*arr})
 
         for i, n in enumerate(nums):
-            if n not in ranks:
-                ranks[n] = i + 1
+            ranks[n] = i + 1
 
         return [ranks[n] for n in arr]
