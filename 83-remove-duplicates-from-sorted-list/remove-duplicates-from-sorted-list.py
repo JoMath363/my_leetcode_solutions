@@ -6,8 +6,8 @@
 class Solution:
     def deleteDuplicates(self, head: Optional[ListNode]) -> Optional[ListNode]:
         stack = []
-        cur = head
         prev = None
+        cur = head
 
         while cur:
             if cur.val in stack:
