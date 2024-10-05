@@ -6,15 +6,15 @@
 class Solution:
     def deleteDuplicates(self, head: Optional[ListNode]) -> Optional[ListNode]:
         stack = []
-        parent = None
         cur = head
+        prev = None
 
         while cur:
             if cur.val in stack:
-                parent.next = cur.next
+                prev.next = cur.next
             else:
                 stack.append(cur.val)
-                parent = cur
+                prev = cur
             
             cur = cur.next
 
