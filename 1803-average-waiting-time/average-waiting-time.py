@@ -1,13 +1,13 @@
 class Solution:
     def averageWaitingTime(self, customers: List[List[int]]) -> float:
         current = 0
-        timeList = []
+        total = 0
 
         for c in customers:
             [arrival, time] = c
             current = max(current, arrival) + time
 
-            timeList.append(current - arrival)
-            
-        return sum(timeList) / len(timeList)
+            total += current - arrival
+
+        return total / len(customers)
 
