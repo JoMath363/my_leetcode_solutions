@@ -19,10 +19,9 @@ class Solution:
 
             if prev and cur.val <= prev.val:
                 return False
-            else:
-                prev = cur
-
+            
+            prev = cur
             cur = cur.right
-
+            
         return True
                 
