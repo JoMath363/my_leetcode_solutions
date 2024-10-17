@@ -13,14 +13,7 @@ class Solution(object):
         cur = head
 
         while cur:
-            nodes.append(cur)
+            nodes.append(cur.val)
             cur = cur.next
 
-        i, j = 0, len(nodes) - 1
-
-        while i < j:
-            if nodes[i].val != nodes[j].val:
-                return False
-            i += 1
-            j -= 1
-        return True
+        return nodes == nodes[::-1]
