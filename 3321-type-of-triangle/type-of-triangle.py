@@ -5,9 +5,9 @@ class Solution(object):
         :rtype: str
         """
 
-        [a, b, c] = nums
+        [a, b, c] = sorted(nums)
 
-        if not (a + b > c and b + c > a and c + a > b):
+        if a + b <= c:
             return 'none'
         elif a == b == c:
             return 'equilateral'
