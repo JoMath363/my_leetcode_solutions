@@ -5,14 +5,13 @@ class Solution(object):
         :rtype: str
         """
 
-        [a, b, c] = sorted(nums)
+        a, b, c = sorted(nums)
 
         if a + b <= c:
             return 'none'
-        elif a == b == c:
+        if a == b == c:
             return 'equilateral'
-        elif a != b and b != c and c != a:
+        if a != b and b != c and c != a:
             return 'scalene'
-        else:
-            return 'isosceles'
+        return 'isosceles'
         
