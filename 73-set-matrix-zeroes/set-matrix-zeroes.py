@@ -5,14 +5,14 @@ class Solution(object):
         :rtype: None Do not return anything, modify matrix in-place instead.
         """
         
-        rows = []
-        cols = []
+        rows = set()
+        cols = set()
 
         for i in range(len(matrix)):
             for j in range(len(matrix[i])):
                 if matrix[i][j] == 0:
-                    rows.append(i)
-                    cols.append(j)
+                    rows.add(i)
+                    cols.add(j)
 
         for i in range(len(matrix)):
             for j in range(len(matrix[i])):
