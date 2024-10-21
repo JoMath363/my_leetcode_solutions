@@ -5,20 +5,18 @@
 #         self.left = left
 #         self.right = right
 class Solution(object):
-    def maxDepth(self, root):
+    def maxDepth(self, root, count = 0):
         """
         :type root: Optional[TreeNode]
         :rtype: int
         """
-        def getHeight(node, count = 0):
-            if node == None:
-                return count
 
-            left = getHeight(node.left, count + 1)
-            right = getHeight(node.right, count + 1)
+        if not root:
+            return 0 
+            
+        left = self.maxDepth(root.left)
+        right = self.maxDepth(root.right)
 
-            return max(left, right)
-
-        return getHeight(root)
+        return max(left, right) + 1
 
         
