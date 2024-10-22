@@ -8,8 +8,7 @@ class Solution(object):
 
         res = []
 
-        for circle in queries:
-            [x, y, r] = circle
+        for [x, y, r] in queries:
             count = 0
 
             for p in points:
