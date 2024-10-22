@@ -6,9 +6,11 @@ class Solution(object):
         """
 
         count = 0
-        while n:
-            if n % 2:
+        b = bin(n)
+
+        for i in range(2, len(b)):
+            if b[i] == '1':
                 count += 1
-            n = n >> 1 
-        return count 
+
+        return count
         
