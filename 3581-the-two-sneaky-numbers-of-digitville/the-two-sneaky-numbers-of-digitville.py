@@ -7,13 +7,10 @@ class Solution(object):
 
         D = defaultdict(int)
         res= []
-
         for n in nums:
             D[n] += 1
-
             if D[n] > 1:
                 res.append(n)
-
         return res
                 
         
