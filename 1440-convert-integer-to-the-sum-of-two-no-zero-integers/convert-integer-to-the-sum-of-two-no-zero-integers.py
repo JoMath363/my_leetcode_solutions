@@ -5,7 +5,7 @@ class Solution(object):
         :rtype: List[int]
         """
         
-        for x in range(1, n):
+        for x in range(1, n//2+1):
             diff = n - x
             if not ('0' in str(diff) or '0' in str(x)):
                 return [x, diff]
