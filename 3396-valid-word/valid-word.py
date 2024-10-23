@@ -5,7 +5,7 @@ class Solution(object):
         :rtype: bool
         """
 
-        hm = {'v': 0, 'c': 0 }
+        v, c = 0, 0
 
         for char in word.lower():
             if char.isdigit():
@@ -13,14 +13,14 @@ class Solution(object):
 
             if char.isalpha():
                 if char in 'aeiou':
-                    hm['v'] += 1
+                    v += 1
                 else:
-                    hm['c'] += 1
+                    c += 1
                 continue
             
             return False
         
-        if len(word) > 2 and hm['v'] > 0 and hm['c'] > 0:
+        if len(word) > 2 and v > 0 and c > 0:
             return True
         return False
 
