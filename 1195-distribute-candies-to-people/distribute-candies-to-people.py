@@ -5,8 +5,8 @@ class Solution:
         i, n = 0, 0
 
         while c > 0:
-            if c - (n + 1) > 0:
-                n += 1
+            n += 1
+            if c - n > 0:
                 P[i] += n
                 c -= n
             else:
