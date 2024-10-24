@@ -1,12 +1,11 @@
 class Solution:
     def distributeCandies(self, candies: int, num_people: int) -> List[int]:
         P = [0] * num_people
-        c = candies
-        i, n = 0, 0
+        c, i, n = candies, 0, 0
 
         while c > 0:
-            n += 1
-            if c - n > 0:
+            if c - (n + 1) > 0:
+                n += 1
                 P[i] += n
                 c -= n
             else:
