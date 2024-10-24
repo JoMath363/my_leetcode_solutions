@@ -8,13 +8,13 @@ class Solution:
                 n += 1
                 P[i] += n
                 c -= n
+
+                i += 1
+                if not i < len(P):
+                    i = 0
             else:
                 P[i] += c
-                c = 0
-
-            i += 1
-            if not i < len(P):
-                i = 0
+                c = 0            
 
         return P
             
