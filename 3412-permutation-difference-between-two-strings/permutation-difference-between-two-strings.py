@@ -1,14 +1,10 @@
 class Solution:
     def findPermutationDifference(self, s: str, t: str) -> int:
-        sMap, tMap = {}, {}
+        idx = {}
+        for i, c in enumerate(s):
+            idx[c] = i
         diff = 0
-        
-        for i in range(len(s)):
-            sMap[s[i]] = i
-            tMap[t[i]] = i
-        
-        for char in s:
-            diff += abs(sMap[char] - tMap[char])
-
+        for i, c in enumerate(t):
+            diff += abs(i - idx[c])
         return diff
         
