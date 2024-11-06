@@ -1,6 +1,6 @@
 class Solution:
     def distinctAverages(self, nums: List[int]) -> int:
-        nums = sorted(nums)
+        nums.sort()
         l, r = 0, len(nums) -1
         res = set()
 
