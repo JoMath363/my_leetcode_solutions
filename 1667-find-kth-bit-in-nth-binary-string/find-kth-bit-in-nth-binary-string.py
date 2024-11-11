@@ -1,12 +1,16 @@
 class Solution:
     def findKthBit(self, n: int, k: int) -> str:
-        s = '0'
+        invert_cnt = 0
+        length = (1 << n) - 1
 
-        for i in range(1, n):
-            inverted = ''
-            for j in range(len(s) - 1, -1, -1):
-                inverted += '1' if s[j] == '0' else '0'
+        while k > 1:
+            if k == length // 2 + 1:
+                return "1" if invert_cnt % 2 == 0 else "0"
 
-            s += '1' + inverted
+            if k > length // 2:
+                k = length + 1 - k
+                invert_cnt += 1
 
-        return s[k-1]
+            length //= 2
+        
+        return "0" if invert_cnt % 2 == 0 else "1"
