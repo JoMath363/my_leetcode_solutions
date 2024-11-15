@@ -6,19 +6,12 @@
 #         self.right = right
 class Solution:
     def convertBST(self, root: Optional[TreeNode]) -> Optional[TreeNode]:
-        stack = []
-        cur = root
-        acc = 0
-
-        while stack or cur:
-            while cur:
-                stack.append(cur)
-                cur = cur.right
-
-            cur = stack.pop()
-            acc += cur.val
-            cur.val = acc
-
-            cur = cur.left
-
-        return root
+        def dfs(node, count):
+            if node:
+                count = dfs(node.right, count)
+                node.val += count
+                count = node.val
+                count = dfs(node.left, count)
+            return count
+        dfs(root, 0)
+        return root   
