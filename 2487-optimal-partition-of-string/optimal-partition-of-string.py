@@ -1,14 +1,11 @@
 class Solution:
     def partitionString(self, s: str) -> int:
-        ans = 1
-        cur = ''
-
-        for i in range(len(s)):
-            if s[i] in cur:
-                ans += 1
-                print(cur)
-                cur = s[i]
+        d = set()
+        ans = 0
+        for i in s:
+            if i not in d:
+                d.add(i)
             else:
-                cur += s[i]  
-
-        return ans
+                ans += 1
+                d = set(i)
+        return ans + 1 if len(d) else ans
