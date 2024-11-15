@@ -11,11 +11,13 @@ class Solution:
         res = []
 
         def helper(node):
-            if node:
-                for child in node.children:
-                    helper(child)
+            if not node:
+                return
+
+            for child in node.children:
+                helper(child)
                 
-                res.append(node.val)
+            res.append(node.val)
         
         helper(root)
         return res
