@@ -1,15 +1,16 @@
 class Solution:
     def resultsArray(self, nums: List[int], k: int) -> List[int]:
-        res = []
+        results = []
+        start = 0
 
-        for i in range(len(nums) - k + 1):
-            for j in range(i + 1, i + k):
-                if nums[j] < nums[j-1] or not nums[j] == nums[j - 1] + 1:
-                    res.append(-1)
-                    break
+        for i in range(len(nums)):
+            if i > 0 and nums[i] != nums[i - 1] + 1:
+                start = i
+            if i >= k - 1:
+                if i - start + 1 >= k:
+                    results.append(nums[i])
+                else:
+                    results.append(-1)
 
-            if len(res) < i + 1:
-                res.append(max(nums[i:i + k]))
-
-        return res
+        return results
 
